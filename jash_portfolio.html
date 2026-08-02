@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jash Boricha | Data Analyst Portfolio</title>
+<meta name="description" content="Jash Boricha — Data Analyst specializing in Power BI, SQL, Excel and AI-assisted application development.">
+<style>
+  /* ============ EDIT HERE: theme colors ============ */
+  :root{
+    --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --border:#2e333d;
+    --text:#e8eaee; --muted:#9aa1ad; --accent:#f5b942; --accent2:#3d8bfd;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .layout{display:grid;grid-template-columns:300px 1fr;gap:24px;max-width:1200px;margin:24px auto;padding:0 16px}
+
+  /* ---- Sidebar ---- */
+  .sidebar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;text-align:center;height:fit-content;position:sticky;top:24px}
+  .avatar{width:130px;height:130px;border-radius:24px;margin:0 auto 16px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:700;color:#0f1115}
+  .sidebar h1{font-size:1.35rem;margin-bottom:6px}
+  .role-badge{display:inline-block;background:var(--card2);color:var(--muted);padding:4px 14px;border-radius:8px;font-size:.8rem;margin-bottom:18px}
+  .divider{height:1px;background:var(--border);margin:16px 0}
+  .contact-item{display:flex;align-items:center;gap:12px;text-align:left;margin-bottom:14px}
+  .ci-icon{width:40px;height:40px;flex:none;border-radius:10px;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;box-shadow:inset 0 0 0 1px var(--border)}
+  .ci-label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .ci-value{font-size:.82rem;word-break:break-all}
+  .socials{display:flex;gap:10px;justify-content:center;margin-top:14px}
+  .socials a{width:38px;height:38px;border-radius:10px;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;box-shadow:inset 0 0 0 1px var(--border);transition:.2s}
+  .socials a:hover{color:var(--accent);transform:translateY(-2px)}
+  .btn{display:inline-block;margin-top:16px;padding:10px 22px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#2f6ed6);color:#fff;font-weight:600;font-size:.85rem;transition:.2s}
+  .btn:hover{filter:brightness(1.15)}
+
+  /* ---- Main ---- */
+  .main{min-width:0}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px;margin-bottom:24px}
+
+  /* top nav */
+  nav.topnav{display:flex;gap:6px;justify-content:flex-end;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;margin-bottom:24px;position:sticky;top:0;z-index:50;backdrop-filter:blur(6px)}
+  nav.topnav a{color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.88rem;font-weight:500}
+  nav.topnav a:hover,nav.topnav a.active{color:var(--accent);background:var(--card2)}
+
+  h2.sec{font-size:1.5rem;margin-bottom:6px}
+  .sec-line{width:44px;height:4px;border-radius:2px;background:var(--accent);margin-bottom:20px}
+
+  /* stat tiles */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:22px}
+  .stat{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center;transition:.2s}
+  .stat:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .stat .num{font-size:1.7rem;font-weight:700;color:var(--accent)}
+  .stat .lbl{font-size:.8rem;color:var(--muted)}
+  .stat .ico{font-size:1.5rem;margin-bottom:6px}
+
+  /* skills */
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:var(--card2);border:1px solid var(--border);padding:8px 18px;border-radius:999px;font-size:.85rem;transition:.2s}
+  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+  /* projects */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .fbtn{background:var(--card2);border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:999px;font-size:.82rem;cursor:pointer;transition:.2s}
+  .fbtn.active,.fbtn:hover{color:#0f1115;background:var(--accent);border-color:var(--accent);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .pcard{background:var(--card2);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .pthumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background:linear-gradient(135deg,#232a38,#1a1f29)}
+  .pbody{padding:16px}
+  .ptag{font-size:.68rem;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);font-weight:700}
+  .pbody h3{font-size:1rem;margin:4px 0 6px}
+  .pbody p{font-size:.82rem;color:var(--muted)}
+  .pview{margin-top:auto;padding:0 16px 14px;font-size:.8rem;color:var(--accent2);font-weight:600}
+
+  /* certificates */
+  .certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .cert{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;gap:12px;align-items:center;transition:.2s}
+  .cert:hover{border-color:var(--accent)}
+  .cert .ci{font-size:1.6rem}
+  .cert h4{font-size:.9rem}
+  .cert span{font-size:.75rem;color:var(--muted)}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+
+  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:24px 0 40px}
+
+  /* ---- Modal ---- */
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:30px 16px;overflow-y:auto}
+  .modal-bg.open{display:flex}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);max-width:760px;width:100%;padding:30px;position:relative;animation:pop .25s ease}
+  @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal .close{position:absolute;top:14px;right:16px;background:var(--card2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:10px;font-size:18px;cursor:pointer}
+  .modal .ptag{font-size:.72rem}
+  .modal h3{font-size:1.4rem;margin:4px 0 10px}
+  .modal .mdesc{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+  .shot{border:1px dashed var(--border);border-radius:12px;background:var(--card2);padding:34px 20px;text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:14px}
+  .mlinks{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+  .mlinks a{background:var(--card2);border:1px solid var(--border);padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:600}
+  .mlinks a:hover{border-color:var(--accent2)}
+  .mdetail h5{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+  .mdetail ul{margin:0 0 14px 18px;font-size:.88rem;color:var(--text)}
+  .mdetail li{margin-bottom:6px}
+  .tools{display:flex;flex-wrap:wrap;gap:8px}
+  .tools span{background:var(--card2);border:1px solid var(--border);padding:4px 12px;border-radius:999px;font-size:.75rem;color:var(--muted)}
+
+  @media(max-width:860px){
+    .layout{grid-template-columns:1fr}
+    .sidebar{position:static}
+    nav.topnav{justify-content:center;flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <!-- EDIT HERE: replace the div below with <img src="your-photo.jpg" class="avatar" style="object-fit:cover"> when you have a photo -->
+    <div class="avatar">JB</div>
+    <h1>Jash Boricha</h1>
+    <div class="role-badge">Data Analyst</div>
+    <div class="divider"></div>
+    <div class="contact-item">
+      <div class="ci-icon">✉</div>
+      <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="ci-icon">☎</div>
+      <div><div class="ci-label">Phone</div><div class="ci-value">+91 93269 55404</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="ci-icon">📍</div>
+      <div><div class="ci-label">Location</div><div class="ci-value">Mumbai, India</div></div>
+    </div>
+    <div class="divider"></div>
+    <div class="socials">
+      <!-- EDIT HERE: put your real profile URLs -->
+      <a href="#" title="LinkedIn — add your URL">in</a>
+      <a href="#" title="GitHub — add your URL">gh</a>
+    </div>
+    <!-- EDIT HERE: link your resume PDF -->
+    <a class="btn" href="#" title="Link your resume file here">Download CV</a>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <nav class="topnav">
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ---- ABOUT ---- -->
+    <section class="panel" id="about">
+      <h2 class="sec">About Me</h2>
+      <div class="sec-line"></div>
+      <p>Hello! I'm Jash Boricha, a Data Analyst at Star Exports, Mumbai, where I turn trade, procurement, and production data into decisions the business actually acts on. I work daily with <strong>SQL, Power BI, and Excel</strong> — building dashboards that track import/export trends, raw-material buying efficiency, and batch-wise production performance.</p>
+      <p style="margin-top:10px">Beyond analytics, I build software. Using AI-assisted development, I've shipped four internal web applications — an <strong>HRMS, Visitor Management System, Workflow Management tool, and Asset Tracking system</strong> — replacing paper and Excel-based processes across the company.</p>
+      <p style="margin-top:10px">Explore my projects below to see the kind of value I can bring to your team.</p>
+      <div class="stats">
+        <div class="stat"><div class="ico">📊</div><div class="num">3</div><div class="lbl">Power BI Projects</div></div>
+        <div class="stat"><div class="ico">🖥️</div><div class="num">4</div><div class="lbl">Web Applications</div></div>
+        <div class="stat"><div class="ico">🗄️</div><div class="num">SQL</div><div class="lbl">Daily Driver</div></div>
+        <div class="stat"><div class="ico">📗</div><div class="num">Excel</div><div class="lbl">Power User</div></div>
+      </div>
+    </section>
+
+    <!-- ---- SKILLS ---- -->
+    <section class="panel" id="skills">
+      <h2 class="sec">Key Skills</h2>
+      <div class="sec-line"></div>
+      <div class="chips">
+        <span class="chip">SQL</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">DAX</span>
+        <span class="chip">Power Query</span>
+        <span class="chip">Data Modeling</span>
+        <span class="chip">MS Excel</span>
+        <span class="chip">Python</span>
+        <span class="chip">Data Cleaning</span>
+        <span class="chip">Data Visualization</span>
+        <span class="chip">AI-Assisted Development</span>
+        <span class="chip">Prompt Engineering</span>
+        <span class="chip">Workflow Automation</span>
+        <span class="chip">IT Support</span>
+      </div>
+    </section>
+
+    <!-- ---- PROJECTS ---- -->
+    <section class="panel" id="projects">
+      <h2 class="sec">My Projects</h2>
+      <div class="sec-line"></div>
+      <div class="filters">
+        <button class="fbtn active" data-f="all">All</button>
+        <button class="fbtn" data-f="powerbi">Power BI</button>
+        <button class="fbtn" data-f="webapp">Web Apps</button>
+        <button class="fbtn" data-f="excel">Excel</button>
+      </div>
+      <div class="grid" id="pgrid"></div>
+    </section>
+
+    <!-- ---- CERTIFICATES ---- -->
+    <section class="panel" id="certificates">
+      <h2 class="sec">Certificates</h2>
+      <div class="sec-line"></div>
+      <div class="certs">
+        <!-- EDIT HERE: replace with your real certificates; wrap in <a href="certificate-link"> to make clickable -->
+        <div class="cert"><div class="ci">🎓</div><div><h4>[Your Certificate Name]</h4><span>[Issuer] — add link</span></div></div>
+        <div class="cert"><div class="ci">🎓</div><div><h4>[Your Certificate Name]</h4><span>[Issuer] — add link</span></div></div>
+      </div>
+    </section>
+
+    <!-- ---- CONTACT ---- -->
+    <section class="panel" id="contact">
+      <h2 class="sec">Let's Work Together!</h2>
+      <div class="sec-line"></div>
+      <p style="color:var(--muted)">Feel free to get in touch. I'm always open to discussing new projects, ideas, or opportunities.</p>
+      <div class="contact-grid">
+        <div class="cert"><div class="ci">✉</div><div><h4>Email</h4><span><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></span></div></div>
+        <div class="cert"><div class="ci">☎</div><div><h4>Phone</h4><span>+91 93269 55404</span></div></div>
+        <div class="cert"><div class="ci">in</div><div><h4>LinkedIn</h4><span><a href="#">[Add your LinkedIn URL]</a></span></div></div>
+      </div>
+    </section>
+
+    <footer>© 2026 Jash Boricha. Built with ❤ in Mumbai.</footer>
+  </main>
+</div>
+
+<!-- ================= PROJECT MODAL ================= -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalBox">
+    <button class="close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   EDIT HERE: your projects live in this array.
+   - To add a screenshot: change  shots:[...placeholder text...]
+     to  shots:['img/myshot1.png','img/myshot2.png']  (paths or URLs)
+   - To add live links: fill the url in links (Power BI publish-to-web,
+     GitHub, LinkedIn post, demo video, etc.)
+   - To EMBED a live interactive Power BI dashboard or web-app demo
+     inside the popup: add  embed:'https://app.powerbi.com/view?r=...'
+     (Power BI publish-to-web URL, or your hosted demo app URL).
+     It renders live inside the project popup.
+   ===================================================================== */
+const projects = [
+  {
+    id:'importexport', cat:'powerbi', icon:'📦', tag:'Power BI Project',
+    title:'Import–Export Trend Analysis',
+    short:'Market-wide import/export trends by value & volume for trade decision-making.',
+    desc:'A multi-page Power BI dashboard analyzing import and export trends across the market by both value and volume, giving management a single view of trade performance.',
+    detail:[
+      'Gathered and modeled trade data with Power Query and a star-schema data model',
+      'Value vs. volume trend pages with drill-down by product, market, and time period',
+      'DAX measures for YoY growth, market share, and moving averages',
+      'Used by leadership to spot trade opportunities and track performance'
+    ],
+    tools:['Power BI','DAX','Power Query','SQL','Excel'],
+    shots:['[ Screenshot: Trends overview page — add image here ]','[ Screenshot: Drill-down page — add image here ]'],
+    embed:'https://app.powerbi.com/view?r=eyJrIjoiOWRmNWE5ODgtYjk0Ni00MzEwLWIwMGUtMjE4M2I0MmJkNTE5IiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9',
+    links:[ {label:'🔗 Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiOWRmNWE5ODgtYjk0Ni00MzEwLWIwMGUtMjE4M2I0MmJkNTE5IiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
+  },
+  {
+    id:'purchase', cat:'powerbi', icon:'📈', tag:'Power BI Project',
+    title:'Raw Material Purchase Price Analysis',
+    short:'Tracks purchase price trends to measure how efficient buying was vs. the market.',
+    desc:'A procurement analytics dashboard tracking raw-material purchase price trends over time, benchmarking buying efficiency and supporting negotiation decisions.',
+    detail:[
+      'Price trend analysis per material with period-over-period comparison',
+      'Buying-efficiency views comparing purchase rates against market movement',
+      'Supported procurement negotiations with data-backed insights',
+      'Automated refresh replacing manual Excel tracking'
+    ],
+    tools:['Power BI','SQL','DAX','Excel'],
+    shots:['[ Screenshot: Price trend page — add image here ]'],
+    embed:'https://app.powerbi.com/view?r=eyJrIjoiNWVmY2U4YjAtMDYxZi00ZmM4LTkxZjgtYTljYzU1NmEwNWIxIiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9',
+    links:[ {label:'🔗 Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiNWVmY2U4YjAtMDYxZi00ZmM4LTkxZjgtYTljYzU1NmEwNWIxIiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
+  },
+  {
+    id:'batch', cat:'powerbi', icon:'🏭', tag:'Power BI Project',
+    title:'Batch Production & Qualification Analysis',
+    short:'Batch-level production metrics with automated PASS/FAIL qualification against customer specs.',
+    desc:'A production analytics dashboard analyzing 118+ output batches — chemistry-based PASS/FAIL qualification against multiple customer specifications, yield tracking, and reactor-wise qualification rates that feed directly into production planning decisions.',
+    detail:[
+      'Automated batch classification against per-customer chemistry specification limits (range and max checks per element)',
+      'Batch-level KPIs: yield, qualification rate, and best-fit customer assignment',
+      'Reactor-wise qualification rate analysis to identify best and worst performing reactors',
+      'Trend views by month and raw-material origin supporting production planning decisions'
+    ],
+    tools:['Power BI','SQL','Power Query','DAX'],
+    demoRequest:true,
+    shots:['img/alv_overview_redacted.png','img/alv_batch_details_redacted.png'],
+    links:[]
+  },
+  {
+    id:'hrms', cat:'webapp', icon:'👥', tag:'Web Application · AI-Assisted',
+    title:'HRMS — Human Resource Management System',
+    short:'Full HR system covering employee records and HR workflows, built with AI (Claude).',
+    desc:'An internal HRMS built using AI-assisted development with Claude — covering employee records, and day-to-day HR workflows — replacing paper and spreadsheet-based processes.',
+    detail:[
+      'Requirements gathered directly from the HR team',
+      'Employee master records, attendance & leave workflows',
+      'Built, tested and rolled out end-to-end using AI-assisted development',
+      'Digitized processes previously run on paper/Excel'
+    ],
+    tools:['Claude AI','HTML/CSS/JS','Workflow Design'],
+    demoRequest:true,
+    shots:['[ Screenshot: HRMS dashboard (redacted) — add image here ]'],
+    links:[]
+  },
+  {
+    id:'vms', cat:'webapp', icon:'🛂', tag:'Web Application · AI-Assisted',
+    title:'Visitor Management System',
+    short:'Front-desk digitization — visitor check-in/out, records, and host notification.',
+    desc:'A Visitor Management System that digitized the company front desk — visitor registration, check-in/check-out logging, and searchable visit history.',
+    detail:[
+      'Digital visitor registration replacing the paper register',
+      'Check-in / check-out tracking with timestamps',
+      'Searchable visitor history for security and compliance'
+    ],
+    tools:['Claude AI','HTML/CSS/JS'],
+    demoRequest:true,
+    shots:['[ Screenshot: Check-in screen (redacted) — add image here ]'],
+    links:[]
+  },
+  {
+    id:'workflow', cat:'webapp', icon:'🔄', tag:'Web Application · AI-Assisted',
+    title:'Workflow Management System',
+    short:'Automates approval chains and task flows across departments.',
+    desc:'A workflow automation tool managing approval chains and task handoffs between departments — bringing visibility into pending items and bottlenecks.',
+    detail:[
+      'Configurable approval chains for internal requests',
+      'Status tracking so nothing gets stuck in someone’s inbox',
+      'Reduced turnaround on approvals versus manual follow-ups'
+    ],
+    tools:['Claude AI','HTML/CSS/JS','Process Mapping'],
+    demoRequest:true,
+    shots:['[ Screenshot: Workflow board (redacted) — add image here ]'],
+    links:[]
+  },
+  {
+    id:'asset', cat:'webapp', icon:'🏷️', tag:'Web Application · AI-Assisted',
+    title:'Asset Tracking System',
+    short:'Company-wide asset inventory — allocation, status, and history tracking.',
+    desc:'An asset tracking system maintaining company inventory — what exists, who holds it, and its status — replacing untracked spreadsheets.',
+    detail:[
+      'Asset register with allocation to employees/departments',
+      'Status and movement history per asset',
+      'Single source of truth for IT and admin teams'
+    ],
+    tools:['Claude AI','HTML/CSS/JS'],
+    demoRequest:true,
+    shots:['[ Screenshot: Asset register (redacted) — add image here ]'],
+    links:[]
+  },
+  {
+    id:'excel', cat:'excel', icon:'📗', tag:'Excel Project',
+    title:'Excel Reporting & Analysis',
+    short:'Pivot-table driven reports with Power Query cleaning and lookup automation.',
+    desc:'Excel-based reporting used in day-to-day analysis at Star Exports — pivot tables, Power Query data cleaning, and lookup-driven reports.',
+    detail:[
+      'Pivot tables & charts for quick operational summaries',
+      'Power Query for repeatable data cleaning',
+      'Lookup and conditional-format driven reports for stakeholders'
+    ],
+    tools:['Excel','Pivot Tables','Power Query'],
+    shots:['[ Screenshot: Excel report — add image here ]'],
+    links:[]
+  }
+];
+
+/* ---------- render cards ---------- */
+const grid = document.getElementById('pgrid');
+function render(filter){
+  grid.innerHTML='';
+  projects.filter(p=>filter==='all'||p.cat===filter).forEach(p=>{
+    const c=document.createElement('div');
+    c.className='pcard';
+    c.innerHTML=`<div class="pthumb">${p.icon}</div>
+      <div class="pbody"><div class="ptag">${p.tag}</div><h3>${p.title}</h3><p>${p.short}</p></div>
+      <div class="pview">See My Work →</div>`;
+    c.onclick=()=>openModal(p);
+    grid.appendChild(c);
+  });
+}
+render('all');
+
+/* ---------- filters ---------- */
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    render(b.dataset.f);
+  };
+});
+
+/* ---------- modal ---------- */
+const bg=document.getElementById('modalBg');
+function openModal(p){
+  const shots=p.shots.map(s=>
+    s.startsWith('[')
+      ? `<div class="shot">${s}</div>`
+      : `<img src="${s}" style="border-radius:12px;margin-bottom:14px;border:1px solid var(--border)">`
+  ).join('');
+  const links=p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  const embed=p.embed
+    ? `<h5 style="color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.8px;margin:4px 0 8px">Live Interactive Demo</h5>
+       <iframe src="${p.embed}" style="width:100%;aspect-ratio:16/10;border:1px solid var(--border);border-radius:12px;margin-bottom:14px" allowfullscreen loading="lazy"></iframe>`
+    : '';
+  const demoNote=p.demoRequest
+    ? `<div style="display:flex;gap:12px;align-items:center;background:var(--card2);border:1px solid var(--accent);border-radius:12px;padding:14px 16px;margin-bottom:14px">
+         <span style="font-size:1.4rem">🔒</span>
+         <div style="font-size:.85rem"><strong style="color:var(--accent)">Live demo available on request.</strong><br>
+         <span style="color:var(--muted)">This project runs on confidential company data, so it isn't published publicly — screenshots below are redacted. I'm happy to give a full live walkthrough during an interview or call; the walkthrough uses modified sample data only, never real company figures.</span></div>
+       </div>`
+    : '';
+  document.getElementById('modalContent').innerHTML=`
+    <div class="ptag">${p.tag}</div>
+    <h3>${p.title}</h3>
+    <p class="mdesc">${p.desc}</p>
+    ${demoNote}
+    ${embed}
+    ${embed?'':shots}
+    ${links?`<div class="mlinks">${links}</div>`:''}
+    <div class="mdetail">
+      <h5>Project Details</h5>
+      <ul>${p.detail.map(d=>`<li>${d}</li>`).join('')}</ul>
+      <h5>Tools Used</h5>
+      <div class="tools">${p.tools.map(t=>`<span>${t}</span>`).join('')}</div>
+    </div>`;
+  bg.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){bg.classList.remove('open');document.body.style.overflow='';}
+bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+/* ---------- active nav highlight ---------- */
+const sections=[...document.querySelectorAll('section.panel')];
+const navLinks=[...document.querySelectorAll('nav.topnav a')];
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+120;
+  let cur=sections[0].id;
+  sections.forEach(s=>{if(s.offsetTop<=y)cur=s.id;});
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+});
+</script>
+</body>
+</html>
