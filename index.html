@@ -3,114 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jash Boricha | Data Analyst Portfolio</title>
-<meta name="description" content="Jash Boricha — Data Analyst specializing in Power BI, SQL, Excel and AI-assisted application development.">
+<title>Jash Boricha — Data Analyst</title>
+<meta name="description" content="Jash Boricha — Data Analyst. SQL, Power BI, Excel, Google Sheets, and AI-assisted business applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  /* ============ EDIT HERE: theme colors ============ */
   :root{
-    --bg:#0f1115; --card:#1a1d24; --card2:#22262f; --border:#2e333d;
-    --text:#e8eaee; --muted:#9aa1ad; --accent:#f5b942; --accent2:#3d8bfd;
-    --radius:16px;
+    --bg:#17181c; --card:#1f2126; --card2:#26282e; --border:#33363d;
+    --text:#eceef0; --muted:#9aa0a8; --accent:#e6b34d; --accent-dim:#b98f3e;
+    --radius:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6}
-  a{color:var(--accent2);text-decoration:none}
+  body{background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;font-weight:300;line-height:1.7;font-size:15px}
+  a{color:var(--accent);text-decoration:none}
   img{max-width:100%;display:block}
+  ::selection{background:var(--accent);color:#17181c}
 
-  .layout{display:grid;grid-template-columns:300px 1fr;gap:24px;max-width:1200px;margin:24px auto;padding:0 16px}
+  .layout{display:grid;grid-template-columns:290px 1fr;gap:26px;max-width:1180px;margin:30px auto;padding:0 18px}
 
-  /* ---- Sidebar ---- */
-  .sidebar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;text-align:center;height:fit-content;position:sticky;top:24px}
-  .avatar{width:130px;height:130px;border-radius:24px;margin:0 auto 16px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:700;color:#0f1115}
-  .sidebar h1{font-size:1.35rem;margin-bottom:6px}
-  .role-badge{display:inline-block;background:var(--card2);color:var(--muted);padding:4px 14px;border-radius:8px;font-size:.8rem;margin-bottom:18px}
-  .divider{height:1px;background:var(--border);margin:16px 0}
-  .contact-item{display:flex;align-items:center;gap:12px;text-align:left;margin-bottom:14px}
-  .ci-icon{width:40px;height:40px;flex:none;border-radius:10px;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px;box-shadow:inset 0 0 0 1px var(--border)}
-  .ci-label{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-  .ci-value{font-size:.82rem;word-break:break-all}
-  .socials{display:flex;gap:10px;justify-content:center;margin-top:14px}
-  .socials a{width:38px;height:38px;border-radius:10px;background:var(--card2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:16px;box-shadow:inset 0 0 0 1px var(--border);transition:.2s}
-  .socials a:hover{color:var(--accent);transform:translateY(-2px)}
-  .btn{display:inline-block;margin-top:16px;padding:10px 22px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#2f6ed6);color:#fff;font-weight:600;font-size:.85rem;transition:.2s}
-  .btn:hover{filter:brightness(1.15)}
+  /* ================= Sidebar ================= */
+  .sidebar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:34px 26px;height:fit-content;position:sticky;top:30px}
+  .sidebar h1{font-size:1.5rem;font-weight:600;letter-spacing:.3px}
+  .role{display:inline-block;margin-top:8px;padding:5px 14px;background:var(--card2);border:1px solid var(--border);border-radius:6px;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+  .rule{height:1px;background:var(--border);margin:22px 0}
+  .c-label{font-size:.66rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .c-value{font-size:.86rem;font-weight:400;word-break:break-word;margin-bottom:16px}
+  .c-value a{color:var(--text)}
+  .c-value a:hover{color:var(--accent)}
+  .btn{display:block;text-align:center;margin-top:8px;padding:12px 0;border:1px solid var(--accent-dim);border-radius:8px;color:var(--accent);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;transition:.25s}
+  .btn:hover{background:var(--accent);color:#17181c}
 
-  /* ---- Main ---- */
+  /* ================= Main ================= */
   .main{min-width:0}
-  .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px;margin-bottom:24px}
+  nav.topnav{display:flex;gap:4px;justify-content:flex-end;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:8px 10px;margin-bottom:26px;position:sticky;top:0;z-index:50}
+  nav.topnav a{color:var(--muted);padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:400;letter-spacing:.4px}
+  nav.topnav a:hover,nav.topnav a.active{color:var(--accent)}
 
-  /* top nav */
-  nav.topnav{display:flex;gap:6px;justify-content:flex-end;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;margin-bottom:24px;position:sticky;top:0;z-index:50;backdrop-filter:blur(6px)}
-  nav.topnav a{color:var(--muted);padding:6px 14px;border-radius:8px;font-size:.88rem;font-weight:500}
-  nav.topnav a:hover,nav.topnav a.active{color:var(--accent);background:var(--card2)}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:40px 42px;margin-bottom:26px}
+  h2.sec{font-size:1.35rem;font-weight:600;letter-spacing:.4px}
+  .sec-line{width:38px;height:3px;background:var(--accent);border-radius:2px;margin:12px 0 26px}
+  p.body{color:var(--muted);font-size:.93rem}
+  p.body strong{color:var(--text);font-weight:500}
+  p.body + p.body{margin-top:14px}
 
-  h2.sec{font-size:1.5rem;margin-bottom:6px}
-  .sec-line{width:44px;height:4px;border-radius:2px;background:var(--accent);margin-bottom:20px}
-
-  /* stat tiles */
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:22px}
-  .stat{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:center;transition:.2s}
-  .stat:hover{transform:translateY(-3px);border-color:var(--accent)}
-  .stat .num{font-size:1.7rem;font-weight:700;color:var(--accent)}
-  .stat .lbl{font-size:.8rem;color:var(--muted)}
-  .stat .ico{font-size:1.5rem;margin-bottom:6px}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:30px}
+  .stat{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:22px 18px;text-align:center}
+  .stat .num{font-size:1.9rem;font-weight:600;color:var(--accent);line-height:1.2}
+  .stat .lbl{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
   /* skills */
   .chips{display:flex;flex-wrap:wrap;gap:10px}
-  .chip{background:var(--card2);border:1px solid var(--border);padding:8px 18px;border-radius:999px;font-size:.85rem;transition:.2s}
-  .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .chip{background:var(--card2);border:1px solid var(--border);padding:8px 20px;border-radius:6px;font-size:.82rem;font-weight:400;color:var(--text)}
 
   /* projects */
-  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-  .fbtn{background:var(--card2);border:1px solid var(--border);color:var(--muted);padding:7px 16px;border-radius:999px;font-size:.82rem;cursor:pointer;transition:.2s}
-  .fbtn.active,.fbtn:hover{color:#0f1115;background:var(--accent);border-color:var(--accent);font-weight:600}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-  .pcard{background:var(--card2);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
-  .pcard:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 10px 30px rgba(0,0,0,.4)}
-  .pthumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background:linear-gradient(135deg,#232a38,#1a1f29)}
-  .pbody{padding:16px}
-  .ptag{font-size:.68rem;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);font-weight:700}
-  .pbody h3{font-size:1rem;margin:4px 0 6px}
-  .pbody p{font-size:.82rem;color:var(--muted)}
-  .pview{margin-top:auto;padding:0 16px 14px;font-size:.8rem;color:var(--accent2);font-weight:600}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .fbtn{background:none;border:1px solid var(--border);color:var(--muted);padding:8px 20px;border-radius:6px;font-size:.78rem;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s}
+  .fbtn.active,.fbtn:hover{color:var(--accent);border-color:var(--accent-dim)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
+  .pcard{background:var(--card2);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-4px);border-color:var(--accent-dim);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  .pthumb{height:140px;overflow:hidden;background:var(--card);border-bottom:1px solid var(--border)}
+  .pthumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .mono{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:600;letter-spacing:3px;color:var(--accent);background:
+    linear-gradient(135deg, rgba(230,179,77,.07), rgba(230,179,77,0) 55%), var(--card)}
+  .pbody{padding:18px 18px 6px}
+  .ptag{font-size:.64rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .pbody h3{font-size:.98rem;font-weight:500;margin:6px 0 6px;line-height:1.4}
+  .pbody p{font-size:.8rem;color:var(--muted)}
+  .pview{margin-top:auto;padding:12px 18px 16px;font-size:.74rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+  .pcard:hover .pview{color:var(--accent)}
 
   /* certificates */
-  .certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-  .cert{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;gap:12px;align-items:center;transition:.2s}
-  .cert:hover{border-color:var(--accent)}
-  .cert .ci{font-size:1.6rem}
-  .cert h4{font-size:.9rem}
-  .cert span{font-size:.75rem;color:var(--muted)}
+  .certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .cert{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:20px 22px}
+  .cert h4{font-size:.92rem;font-weight:500}
+  .cert span{font-size:.76rem;color:var(--muted);letter-spacing:.4px}
 
   /* contact */
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
 
-  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:24px 0 40px}
+  footer{text-align:center;color:var(--muted);font-size:.76rem;letter-spacing:.6px;padding:10px 0 44px}
 
-  /* ---- Modal ---- */
-  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:30px 16px;overflow-y:auto}
+  /* ================= Modal ================= */
+  .modal-bg{position:fixed;inset:0;background:rgba(10,11,13,.8);display:none;align-items:flex-start;justify-content:center;z-index:100;padding:34px 16px;overflow-y:auto;backdrop-filter:blur(3px)}
   .modal-bg.open{display:flex}
-  .modal{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);max-width:760px;width:100%;padding:30px;position:relative;animation:pop .25s ease}
-  @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-  .modal .close{position:absolute;top:14px;right:16px;background:var(--card2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:10px;font-size:18px;cursor:pointer}
-  .modal .ptag{font-size:.72rem}
-  .modal h3{font-size:1.4rem;margin:4px 0 10px}
-  .modal .mdesc{color:var(--muted);font-size:.92rem;margin-bottom:18px}
-  .shot{border:1px dashed var(--border);border-radius:12px;background:var(--card2);padding:34px 20px;text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:14px}
-  .mlinks{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
-  .mlinks a{background:var(--card2);border:1px solid var(--border);padding:8px 16px;border-radius:10px;font-size:.82rem;font-weight:600}
-  .mlinks a:hover{border-color:var(--accent2)}
-  .mdetail h5{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
-  .mdetail ul{margin:0 0 14px 18px;font-size:.88rem;color:var(--text)}
-  .mdetail li{margin-bottom:6px}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);max-width:780px;width:100%;padding:38px 40px;position:relative;animation:pop .22s ease}
+  @keyframes pop{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .modal .close{position:absolute;top:16px;right:18px;background:none;border:1px solid var(--border);color:var(--muted);width:34px;height:34px;border-radius:8px;font-size:15px;cursor:pointer;font-family:inherit}
+  .modal .close:hover{color:var(--accent);border-color:var(--accent-dim)}
+  .modal h3{font-size:1.3rem;font-weight:600;margin:6px 0 12px}
+  .modal .mdesc{color:var(--muted);font-size:.88rem;margin-bottom:20px}
+  .note{border:1px solid var(--accent-dim);border-radius:10px;padding:16px 18px;margin-bottom:18px;font-size:.82rem;color:var(--muted)}
+  .note b{color:var(--accent);font-weight:500;display:block;margin-bottom:4px;letter-spacing:.4px}
+  .shotimg{border-radius:10px;margin-bottom:14px;border:1px solid var(--border)}
+  .mlinks{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+  .mlinks a{border:1px solid var(--border);padding:9px 18px;border-radius:8px;font-size:.78rem;letter-spacing:.8px;color:var(--text)}
+  .mlinks a:hover{border-color:var(--accent-dim);color:var(--accent)}
+  .mh5{color:var(--accent);font-size:.68rem;text-transform:uppercase;letter-spacing:1.8px;font-weight:500;margin:2px 0 10px}
+  .mdetail ul{margin:0 0 18px 18px;font-size:.86rem;color:var(--muted)}
+  .mdetail li{margin-bottom:7px}
   .tools{display:flex;flex-wrap:wrap;gap:8px}
-  .tools span{background:var(--card2);border:1px solid var(--border);padding:4px 12px;border-radius:999px;font-size:.75rem;color:var(--muted)}
+  .tools span{border:1px solid var(--border);padding:5px 14px;border-radius:6px;font-size:.72rem;color:var(--muted);letter-spacing:.6px}
 
-  @media(max-width:860px){
+  @media(max-width:880px){
     .layout{grid-template-columns:1fr}
     .sidebar{position:static}
     nav.topnav{justify-content:center;flex-wrap:wrap}
+    .panel{padding:28px 22px}
   }
 </style>
 </head>
@@ -120,26 +122,20 @@
 
   <!-- ================= SIDEBAR ================= -->
   <aside class="sidebar">
-    <!-- EDIT HERE: replace the div below with <img src="your-photo.jpg" class="avatar" style="object-fit:cover"> when you have a photo -->
-    <div class="avatar">JB</div>
     <h1>Jash Boricha</h1>
-    <div class="role-badge">Data Analyst</div>
-    <div class="divider"></div>
-    <div class="contact-item">
-      <div class="ci-icon">✉</div>
-      <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></div></div>
-    </div>
-    <div class="contact-item">
-      <div class="ci-icon">📍</div>
-      <div><div class="ci-label">Location</div><div class="ci-value">Mumbai, India</div></div>
-    </div>
-    <div class="divider"></div>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/jash-boricha0217" target="_blank" rel="noopener" title="LinkedIn">in</a>
-      <a href="https://github.com/jashboricha" target="_blank" rel="noopener" title="GitHub">gh</a>
-    </div>
-    <!-- EDIT HERE: link your resume PDF -->
-    <a class="btn" href="#" title="Link your resume file here">Download CV</a>
+    <div class="role">Data Analyst</div>
+    <div class="rule"></div>
+    <div class="c-label">Email</div>
+    <div class="c-value"><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></div>
+    <div class="c-label">Location</div>
+    <div class="c-value">Mumbai, India</div>
+    <div class="c-label">LinkedIn</div>
+    <div class="c-value"><a href="https://www.linkedin.com/in/jash-boricha0217" target="_blank" rel="noopener">linkedin.com/in/jash-boricha0217</a></div>
+    <div class="c-label">GitHub</div>
+    <div class="c-value"><a href="https://github.com/jashboricha" target="_blank" rel="noopener">github.com/jashboricha</a></div>
+    <div class="rule"></div>
+    <!-- EDIT HERE: put your resume PDF in this folder and update the filename below -->
+    <a class="btn" href="#" title="Add your resume PDF link">Download CV</a>
   </aside>
 
   <!-- ================= MAIN ================= -->
@@ -157,14 +153,14 @@
     <section class="panel" id="about">
       <h2 class="sec">About Me</h2>
       <div class="sec-line"></div>
-      <p>Hello! I'm Jash Boricha, a Data Analyst at Star Exports, Mumbai, where I turn trade, procurement, and production data into decisions the business actually acts on. I work daily with <strong>SQL, Power BI, and Excel</strong> — building dashboards that track import/export trends, raw-material buying efficiency, and batch-wise production performance.</p>
-      <p style="margin-top:10px">Beyond analytics, I build software. Using AI-assisted development, I've shipped four internal web applications — an <strong>HRMS, Visitor Management System, Workflow Management tool, and Asset Tracking system</strong> — replacing paper and Excel-based processes across the company.</p>
-      <p style="margin-top:10px">Explore my projects below to see the kind of value I can bring to your team.</p>
+      <p class="body">I'm a data analyst who enjoys turning messy, real-world business data into decisions people actually use. I taught myself analytics on the job, growing from IT support into a full analytics role at a Mumbai manufacturing and trading company — and that self-built path is something I'm proud of.</p>
+      <p class="body">Today I work daily in <strong>SQL, Power BI, Excel and Google Sheets</strong>, building the live dashboards that leadership relies on for purchasing and production decisions. Beyond dashboards, I design and ship <strong>AI-assisted business applications</strong> end to end — from gathering requirements to deployment on a live server — including an HRMS with payroll, a visitor management system, asset tracking and workflow automation.</p>
+      <p class="body">Quick to learn, comfortable with ambiguity, careful with documentation. Explore the projects below — two dashboards are live and fully interactive.</p>
       <div class="stats">
-        <div class="stat"><div class="ico">📊</div><div class="num">4</div><div class="lbl">Power BI Projects</div></div>
-        <div class="stat"><div class="ico">🖥️</div><div class="num">4</div><div class="lbl">Web Applications</div></div>
-        <div class="stat"><div class="ico">🗄️</div><div class="num">SQL</div><div class="lbl">Daily Driver</div></div>
-        <div class="stat"><div class="ico">📗</div><div class="num">Excel</div><div class="lbl">Power User</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Power BI Projects</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Web Applications</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">Live Dashboards</div></div>
+        <div class="stat"><div class="num">2026</div><div class="lbl">Certified</div></div>
       </div>
     </section>
 
@@ -179,13 +175,14 @@
         <span class="chip">Power Query</span>
         <span class="chip">Data Modeling</span>
         <span class="chip">MS Excel</span>
+        <span class="chip">Google Sheets</span>
         <span class="chip">Python</span>
         <span class="chip">Data Cleaning</span>
         <span class="chip">Data Visualization</span>
-        <span class="chip">AI-Assisted Development</span>
+        <span class="chip">Generative AI &amp; LLMs</span>
         <span class="chip">Prompt Engineering</span>
+        <span class="chip">Google Workspace Admin</span>
         <span class="chip">Workflow Automation</span>
-        <span class="chip">IT Support</span>
       </div>
     </section>
 
@@ -207,24 +204,25 @@
       <h2 class="sec">Certificates</h2>
       <div class="sec-line"></div>
       <div class="certs">
-        <!-- EDIT HERE: wrap a cert in <a href="certificate-link"> to make it clickable -->
-        <div class="cert"><div class="ci">🎓</div><div><h4>Stay Ahead of the AI Curve</h4><span>Coursera — 2026</span></div></div>
-        <div class="cert"><div class="ci">🎓</div><div><h4>Learn Python From Scratch</h4><span>CodeWithHarry — 2026</span></div></div>
+        <!-- EDIT HERE: wrap a cert in <a href="link"> to make it clickable -->
+        <div class="cert"><h4>Stay Ahead of the AI Curve</h4><span>Coursera · 2026</span></div>
+        <div class="cert"><h4>Learn Python From Scratch</h4><span>CodeWithHarry · 2026</span></div>
       </div>
     </section>
 
     <!-- ---- CONTACT ---- -->
     <section class="panel" id="contact">
-      <h2 class="sec">Let's Work Together!</h2>
+      <h2 class="sec">Let's Work Together</h2>
       <div class="sec-line"></div>
-      <p style="color:var(--muted)">Feel free to get in touch. I'm always open to discussing new projects, ideas, or opportunities.</p>
+      <p class="body">I'm always open to discussing data, dashboards, new projects or opportunities. The fastest way to reach me:</p>
       <div class="contact-grid">
-        <div class="cert"><div class="ci">✉</div><div><h4>Email</h4><span><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></span></div></div>
-        <div class="cert"><div class="ci">in</div><div><h4>LinkedIn</h4><span><a href="https://www.linkedin.com/in/jash-boricha0217" target="_blank" rel="noopener">linkedin.com/in/jash-boricha0217</a></span></div></div>
+        <div class="cert"><h4>Email</h4><span><a href="mailto:jashboricha17@gmail.com">jashboricha17@gmail.com</a></span></div>
+        <div class="cert"><h4>LinkedIn</h4><span><a href="https://www.linkedin.com/in/jash-boricha0217" target="_blank" rel="noopener">linkedin.com/in/jash-boricha0217</a></span></div>
+        <div class="cert"><h4>GitHub</h4><span><a href="https://github.com/jashboricha" target="_blank" rel="noopener">github.com/jashboricha</a></span></div>
       </div>
     </section>
 
-    <footer>© 2026 Jash Boricha. Built with ❤ in Mumbai.</footer>
+    <footer>© 2026 Jash Boricha · Mumbai, India</footer>
   </main>
 </div>
 
@@ -238,59 +236,51 @@
 
 <script>
 /* =====================================================================
-   EDIT HERE: your projects live in this array.
-   - To add a screenshot: change  shots:[...placeholder text...]
-     to  shots:['img/myshot1.png','img/myshot2.png']  (paths or URLs)
-   - To add live links: fill the url in links (Power BI publish-to-web,
-     GitHub, LinkedIn post, demo video, etc.)
-   - To EMBED a live interactive Power BI dashboard or web-app demo
-     inside the popup: add  embed:'https://app.powerbi.com/view?r=...'
-     (Power BI publish-to-web URL, or your hosted demo app URL).
-     It renders live inside the project popup.
+   EDIT HERE: projects live in this array.
+   thumb: 'img/file.png' shows a screenshot on the card; mono:'XX' shows
+   a lettermark tile instead. embed: renders a live iframe in the popup.
    ===================================================================== */
 const projects = [
   {
-    id:'importexport', cat:'powerbi', icon:'📦', tag:'Power BI Project',
-    title:'Import–Export Trend Analysis',
-    short:'Market-wide import/export trends by value & volume for trade decision-making.',
-    desc:'A multi-page Power BI dashboard analyzing import and export trends across the market by both value and volume, giving management a single view of trade performance.',
+    id:'importexport', cat:'powerbi', mono:'IE', tag:'Power BI · Live',
+    title:'Import & Export Market Analysis',
+    short:'Market trends by value and volume for trade decision-making.',
+    desc:'A multi-page Power BI dashboard analysing import and export trends across the market by value and volume, giving management a single live view of trade performance.',
     detail:[
-      'Gathered and modeled trade data with Power Query and a star-schema data model',
-      'Value vs. volume trend pages with drill-down by product, market, and time period',
-      'DAX measures for YoY growth, market share, and moving averages',
-      'Used by leadership to spot trade opportunities and track performance'
+      'Data modeled with Power Query and a star-schema design',
+      'Value and volume trend pages with drill-downs by product, market and time period',
+      'DAX measures for growth, market share and moving averages',
+      'Replaced hours of manual market research every week'
     ],
     tools:['Power BI','DAX','Power Query','SQL','Excel'],
     embed:'https://app.powerbi.com/view?r=eyJrIjoiOWRmNWE5ODgtYjk0Ni00MzEwLWIwMGUtMjE4M2I0MmJkNTE5IiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9',
-    shots:[],
-    links:[ {label:'🔗 Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiOWRmNWE5ODgtYjk0Ni00MzEwLWIwMGUtMjE4M2I0MmJkNTE5IiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
+    links:[ {label:'Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiOWRmNWE5ODgtYjk0Ni00MzEwLWIwMGUtMjE4M2I0MmJkNTE5IiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
   },
   {
-    id:'purchase', cat:'powerbi', icon:'📈', tag:'Power BI Project',
-    title:'Raw Material Purchase Price Analysis',
-    short:'Tracks purchase price trends to measure how efficient buying was vs. the market.',
-    desc:'A procurement analytics dashboard tracking raw-material purchase price trends over time, benchmarking buying efficiency and supporting negotiation decisions.',
+    id:'purchase', cat:'powerbi', mono:'RM', tag:'Power BI · Live',
+    title:'Raw Material Purchase Analysis',
+    short:'Purchase price trends vs the market to measure buying efficiency.',
+    desc:'A procurement analytics dashboard tracking raw-material purchase price trends against market movement, measuring how efficient buying was and supporting negotiations.',
     detail:[
       'Price trend analysis per material with period-over-period comparison',
       'Buying-efficiency views comparing purchase rates against market movement',
-      'Supported procurement negotiations with data-backed insights',
+      'Gives procurement solid ground in negotiations and flags costly buys early',
       'Automated refresh replacing manual Excel tracking'
     ],
     tools:['Power BI','SQL','DAX','Excel'],
     embed:'https://app.powerbi.com/view?r=eyJrIjoiNWVmY2U4YjAtMDYxZi00ZmM4LTkxZjgtYTljYzU1NmEwNWIxIiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9',
-    shots:[],
-    links:[ {label:'🔗 Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiNWVmY2U4YjAtMDYxZi00ZmM4LTkxZjgtYTljYzU1NmEwNWIxIiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
+    links:[ {label:'Open Full Dashboard', url:'https://app.powerbi.com/view?r=eyJrIjoiNWVmY2U4YjAtMDYxZi00ZmM4LTkxZjgtYTljYzU1NmEwNWIxIiwidCI6IjAyNWYyNTBiLWEwZGUtNDhhNy1iOWIxLWVjZjIzMjEzYjViMyJ9'} ]
   },
   {
-    id:'batch', cat:'powerbi', icon:'🏭', tag:'Power BI Project',
+    id:'batch', cat:'powerbi', thumb:'img/alv_overview_redacted.png', tag:'Power BI',
     title:'Batch Production & Qualification Analysis',
-    short:'Batch-level production metrics with automated PASS/FAIL qualification against customer specs.',
-    desc:'A production analytics dashboard analyzing 118+ output batches — chemistry-based PASS/FAIL qualification against multiple customer specifications, yield tracking, and reactor-wise qualification rates that feed directly into production planning decisions.',
+    short:'118+ batches auto-checked pass/fail against customer chemistry specs.',
+    desc:'A production analytics dashboard analysing 118+ output batches — chemistry-based pass/fail qualification against multiple customer specifications, yield tracking, and reactor-wise qualification rates.',
     detail:[
-      'Automated batch classification against per-customer chemistry specification limits (range and max checks per element)',
-      'Batch-level KPIs: yield, qualification rate, and best-fit customer assignment',
-      'Reactor-wise qualification rate analysis to identify best and worst performing reactors',
-      'Trend views by month and raw-material origin supporting production planning decisions'
+      'Automated batch classification against per-customer chemistry limits (range and max checks per element)',
+      'Reactor-wise qualification rates identify best and worst performing reactors',
+      'Manual checking dropped to minutes; off-spec batches get caught before dispatch',
+      'Trend views by month and raw-material origin support production planning'
     ],
     tools:['Power BI','SQL','Power Query','DAX'],
     demoRequest:true,
@@ -298,15 +288,15 @@ const projects = [
     links:[]
   },
   {
-    id:'delivery', cat:'powerbi', icon:'🚚', tag:'Power BI Project · Live Google Sheets',
+    id:'delivery', cat:'powerbi', thumb:'img/alloy_delivery_partial_redacted.png', tag:'Power BI · Google Sheets',
     title:'Master Alloy Delivery Status Tracker',
-    short:'Live PO-wise delivery tracking — contractual vs delivered vs rejected KG, auto-refreshed from Google Sheets.',
-    desc:'A delivery-status dashboard tracking every customer purchase order for master alloys — contractual vs delivered vs rejected quantities, balance KG, delivery-wise invoicing values, and an at-a-glance PARTIAL / DELIVERED status flag. Connected live to Google Sheets, so the report updates automatically as the operations team logs dispatches — no manual refresh.',
+    short:'PO-wise delivery tracking, auto-refreshed live from Google Sheets.',
+    desc:'A delivery-status dashboard tracking every customer purchase order — contractual vs delivered vs rejected quantities, balance, per-dispatch invoicing values, and an at-a-glance PARTIAL / DELIVERED flag. Connected live to Google Sheets, so it updates as the team logs dispatches.',
     detail:[
-      'Live data connection to Google Sheets — dispatch entries logged by the team flow straight into the report',
-      'Customer and PO-level slicers with KPI cards: contractual, delivered, rejected, net delivered, and balance KG',
-      'Delivery-sequence table with per-dispatch price, gross value, GST, credit notes, and final value',
-      'Automatic PARTIAL / DELIVERED status flag per PO, giving management instant order-fulfilment visibility'
+      'Live Google Sheets connection — dispatch entries flow straight into the report',
+      'Customer and PO-level slicers with KPI cards for contractual, delivered, rejected and balance quantities',
+      'Delivery-sequence table with per-dispatch price, GST, credit notes and final value',
+      'Ended manual status reporting; order fulfilment visible at a glance'
     ],
     tools:['Power BI','Google Sheets (live)','DAX','Power Query'],
     demoRequest:true,
@@ -314,78 +304,81 @@ const projects = [
     links:[]
   },
   {
-    id:'hrms', cat:'webapp', icon:'👥', tag:'Web Application · AI-Assisted',
-    title:'HRMS — Human Resource Management System',
-    short:'Full HR system covering employee records and HR workflows, built with AI (Claude).',
-    desc:'An internal HRMS built using AI-assisted development with Claude — covering employee records, and day-to-day HR workflows — replacing paper and spreadsheet-based processes.',
+    id:'hrms', cat:'webapp', mono:'HR', tag:'Web Application · AI-Assisted',
+    title:'HRMS — HR Management System',
+    short:'Attendance, payroll, leave, recruitment and induction on one platform.',
+    desc:'A full HR platform built with AI-assisted development — employee records, attendance from biometric punch logs, payroll with automatic salary breakup, leave, recruitment and induction. Deployed on the company’s own server with HTTPS.',
     detail:[
-      'Requirements gathered directly from the HR team',
-      'Employee master records, attendance & leave workflows',
-      'Built, tested and rolled out end-to-end using AI-assisted development',
-      'Digitized processes previously run on paper/Excel'
+      'Attendance imported from the biometric face device, with late marks and half-day flags',
+      'Payroll: CTC to salary breakup, PF, ESIC, professional tax and loss-of-pay from attendance, printable payslips',
+      'Leave balances with self-apply and approval flows; recruitment pipeline and induction checklists',
+      'Cut HR’s manual attendance and salary work to a fraction'
     ],
-    tools:['Claude AI','HTML/CSS/JS','Workflow Design'],
+    tools:['AI-Assisted Development','Django / Python','HTTPS Deployment'],
     demoRequest:true,
-    shots:['[ Screenshot: HRMS dashboard (redacted) — add image here ]'],
+    shots:[],
     links:[]
   },
   {
-    id:'vms', cat:'webapp', icon:'🛂', tag:'Web Application · AI-Assisted',
+    id:'vms', cat:'webapp', mono:'VM', tag:'Web Application · AI-Assisted',
     title:'Visitor Management System',
-    short:'Front-desk digitization — visitor check-in/out, records, and host notification.',
-    desc:'A Visitor Management System that digitized the company front desk — visitor registration, check-in/check-out logging, and searchable visit history.',
+    short:'End-to-end gate pass workflow with photo and ID capture.',
+    desc:'A visitor management system that digitised the company front desk — online request, HOD approval, security desk check-in and check-out with visitor photo and ID capture, and weekly MIS reports, behind role-based logins.',
     detail:[
-      'Digital visitor registration replacing the paper register',
-      'Check-in / check-out tracking with timestamps',
-      'Searchable visitor history for security and compliance'
+      'Online request routed automatically to the right HOD for approval',
+      'Security desk check-in and check-out with photo and ID document capture',
+      'Weekly MIS reports for management; searchable visit history',
+      'Replaced the paper visitor register with accountable digital records'
     ],
-    tools:['Claude AI','HTML/CSS/JS'],
+    tools:['AI-Assisted Development','Node.js','Role-Based Access'],
     demoRequest:true,
-    shots:['[ Screenshot: Check-in screen (redacted) — add image here ]'],
+    shots:[],
     links:[]
   },
   {
-    id:'workflow', cat:'webapp', icon:'🔄', tag:'Web Application · AI-Assisted',
-    title:'Workflow Management System',
-    short:'Automates approval chains and task flows across departments.',
-    desc:'A workflow automation tool managing approval chains and task handoffs between departments — bringing visibility into pending items and bottlenecks.',
+    id:'workflow', cat:'webapp', mono:'WF', tag:'Web Application · AI-Assisted',
+    title:'Workflow Automation Platform',
+    short:'33-step order-to-cash process across six departments.',
+    desc:'A workflow platform that runs the company’s 33-step order-to-cash process across six departments — three-level approvals, SLA countdowns per step, automatic escalation of delays, and a full audit trail. Rollout in progress.',
     detail:[
-      'Configurable approval chains for internal requests',
-      'Status tracking so nothing gets stuck in someone’s inbox',
-      'Reduced turnaround on approvals versus manual follow-ups'
+      'Each order moves step by step; only the responsible department can act',
+      'Three-level approval: member completes, head approves, management signs off external actions',
+      'SLA countdown per step with escalation contacts when overdue',
+      'Replaces follow-up calls with tracked handoffs; cuts delays and communication gaps'
     ],
-    tools:['Claude AI','HTML/CSS/JS','Process Mapping'],
+    tools:['AI-Assisted Development','Workflow Design','Audit Trail'],
     demoRequest:true,
-    shots:['[ Screenshot: Workflow board (redacted) — add image here ]'],
+    shots:[],
     links:[]
   },
   {
-    id:'asset', cat:'webapp', icon:'🏷️', tag:'Web Application · AI-Assisted',
-    title:'Asset Tracking System',
-    short:'Company-wide asset inventory — allocation, status, and history tracking.',
-    desc:'An asset tracking system maintaining company inventory — what exists, who holds it, and its status — replacing untracked spreadsheets.',
+    id:'asset', cat:'webapp', mono:'AT', tag:'Web Application · AI-Assisted',
+    title:'Asset & Sample Movement Tracker',
+    short:'Chain-of-custody register between factory and head office.',
+    desc:'A shared register tracking every asset and sample that moves between factory and head office — who ordered, dispatched, carried and received each item, with user and time stamps at every stage.',
     detail:[
-      'Asset register with allocation to employees/departments',
-      'Status and movement history per asset',
-      'Single source of truth for IT and admin teams'
+      'Every stage recorded: request, dispatch, carrier, receipt, final handover',
+      'Printable handover slip with signature boxes travels with the item',
+      'Overdue items flagged automatically; full history per item',
+      'Closes the accountability gap — nothing moves without a name on record'
     ],
-    tools:['Claude AI','HTML/CSS/JS'],
+    tools:['AI-Assisted Development','Chain of Custody','CSV / Excel Export'],
     demoRequest:true,
-    shots:['[ Screenshot: Asset register (redacted) — add image here ]'],
+    shots:[],
     links:[]
   },
   {
-    id:'excel', cat:'excel', icon:'📗', tag:'Excel Project',
+    id:'excel', cat:'excel', mono:'XL', tag:'Excel',
     title:'Excel Reporting & Analysis',
-    short:'Pivot-table driven reports with Power Query cleaning and lookup automation.',
-    desc:'Excel-based reporting used in day-to-day analysis at Star Exports — pivot tables, Power Query data cleaning, and lookup-driven reports.',
+    short:'Pivot-driven operational reports with Power Query cleaning.',
+    desc:'Excel-based reporting used in day-to-day analysis — pivot tables, Power Query data cleaning, and lookup-driven reports for operational stakeholders.',
     detail:[
-      'Pivot tables & charts for quick operational summaries',
+      'Pivot tables and charts for quick operational summaries',
       'Power Query for repeatable data cleaning',
       'Lookup and conditional-format driven reports for stakeholders'
     ],
     tools:['Excel','Pivot Tables','Power Query'],
-    shots:['[ Screenshot: Excel report — add image here ]'],
+    shots:[],
     links:[]
   }
 ];
@@ -397,9 +390,12 @@ function render(filter){
   projects.filter(p=>filter==='all'||p.cat===filter).forEach(p=>{
     const c=document.createElement('div');
     c.className='pcard';
-    c.innerHTML=`<div class="pthumb">${p.icon}</div>
+    const thumb=p.thumb
+      ? `<div class="pthumb"><img src="${p.thumb}" alt="${p.title}" loading="lazy"></div>`
+      : `<div class="pthumb"><div class="mono">${p.mono||''}</div></div>`;
+    c.innerHTML=`${thumb}
       <div class="pbody"><div class="ptag">${p.tag}</div><h3>${p.title}</h3><p>${p.short}</p></div>
-      <div class="pview">See My Work →</div>`;
+      <div class="pview">View Project →</div>`;
     c.onclick=()=>openModal(p);
     grid.appendChild(c);
   });
@@ -418,22 +414,15 @@ document.querySelectorAll('.fbtn').forEach(b=>{
 /* ---------- modal ---------- */
 const bg=document.getElementById('modalBg');
 function openModal(p){
-  const shots=(p.shots||[]).map(s=>
-    s.startsWith('[')
-      ? `<div class="shot">${s}</div>`
-      : `<img src="${s}" style="border-radius:12px;margin-bottom:14px;border:1px solid var(--border)">`
-  ).join('');
-  const links=p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  const shots=(p.shots||[]).map(s=>`<img class="shotimg" src="${s}" alt="${p.title} screenshot" loading="lazy">`).join('');
+  const links=(p.links||[]).map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
   const embed=p.embed
-    ? `<h5 style="color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.8px;margin:4px 0 8px">Live Interactive Demo</h5>
-       <iframe src="${p.embed}" style="width:100%;aspect-ratio:16/10;border:1px solid var(--border);border-radius:12px;margin-bottom:14px" allowfullscreen loading="lazy"></iframe>`
+    ? `<div class="mh5">Live Interactive Dashboard</div>
+       <iframe src="${p.embed}" style="width:100%;aspect-ratio:16/10;border:1px solid var(--border);border-radius:10px;margin-bottom:16px" allowfullscreen loading="lazy"></iframe>`
     : '';
   const demoNote=p.demoRequest
-    ? `<div style="display:flex;gap:12px;align-items:center;background:var(--card2);border:1px solid var(--accent);border-radius:12px;padding:14px 16px;margin-bottom:14px">
-         <span style="font-size:1.4rem">🔒</span>
-         <div style="font-size:.85rem"><strong style="color:var(--accent)">Live demo available on request.</strong><br>
-         <span style="color:var(--muted)">This project runs on confidential company data, so it isn't published publicly — screenshots below are redacted. I'm happy to give a full live walkthrough during an interview or call; the walkthrough uses modified sample data only, never real company figures.</span></div>
-       </div>`
+    ? `<div class="note"><b>Live demo available on request</b>
+       This project runs on confidential company data, so it isn't published publicly — screenshots are redacted. I'm happy to give a full walkthrough in an interview or call, using modified sample data only.</div>`
     : '';
   document.getElementById('modalContent').innerHTML=`
     <div class="ptag">${p.tag}</div>
@@ -444,9 +433,9 @@ function openModal(p){
     ${embed?'':shots}
     ${links?`<div class="mlinks">${links}</div>`:''}
     <div class="mdetail">
-      <h5>Project Details</h5>
+      <div class="mh5">Project Details</div>
       <ul>${p.detail.map(d=>`<li>${d}</li>`).join('')}</ul>
-      <h5>Tools Used</h5>
+      <div class="mh5">Tools</div>
       <div class="tools">${p.tools.map(t=>`<span>${t}</span>`).join('')}</div>
     </div>`;
   bg.classList.add('open');
@@ -456,11 +445,11 @@ function closeModal(){bg.classList.remove('open');document.body.style.overflow='
 bg.addEventListener('click',e=>{if(e.target===bg)closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-/* ---------- active nav highlight ---------- */
+/* ---------- active nav ---------- */
 const sections=[...document.querySelectorAll('section.panel')];
 const navLinks=[...document.querySelectorAll('nav.topnav a')];
 window.addEventListener('scroll',()=>{
-  const y=window.scrollY+120;
+  const y=window.scrollY+130;
   let cur=sections[0].id;
   sections.forEach(s=>{if(s.offsetTop<=y)cur=s.id;});
   navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
